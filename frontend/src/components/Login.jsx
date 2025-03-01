@@ -33,16 +33,13 @@ const Login = () => {
     setIsLoading(true);
   
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', formData, {
-        withCredentials: true,
-      });
-  
+      const response = await axios.post('http://localhost:5000/api/users/login', formData);
       setMessage(response.data.message);
   
       // Store user info in sessionStorage
       sessionStorage.setItem('user', JSON.stringify({
         email: formData.email,
-        name: response.data.name, // Assuming the backend sends the user's name
+        name: response.data.name,
         userId: response.data.userId,
       }));
   
