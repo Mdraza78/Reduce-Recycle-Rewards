@@ -1,0 +1,196 @@
+/* General body styling */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110vh;
+}
+
+/* Wrapper for the form container */
+.register-wrapper {
+    display: flex;
+    width: 950px;
+    height: 600px; /* Increased height */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Left-side Image */
+.register-image {
+    flex: 1;
+    background: url('https://images.unsplash.com/photo-1546082373-472b0bedd449?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: cover;
+}
+
+/* Right-side form container */
+.register-container {
+    flex: 1;
+    padding: 30px 40px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%; /* Ensure full height */
+}
+
+/* Heading */
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Styling the form groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Styling labels */
+label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Styling the input fields */
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1.5px solid #28a745;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Styling input fields when focused */
+input:focus {
+    border-color: #28a745;
+}
+
+/* Placeholder text style */
+input::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Standardize button styling */
+button {
+    width: 100%; /* Ensure both buttons take full width */
+    padding: 14px; /* Consistent padding for both buttons */
+    font-size: 16px; /* Same font size for both buttons */
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Register Button Styling */
+.register-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    margin-top: 10px;
+}
+
+.register-btn:hover,
+.register-btn:focus {
+    background-color: #218838;
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Google login button styling */
+.google-login {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Add gap between icon and text */
+    background-color: whitesmoke;
+    border: 1.5px solid #ddd;
+    font-family: 'Roboto', sans-serif; /* Apply Google sign-in button font */
+    color: #555;
+    height: 45px;
+}
+
+/* Google Logo Size */
+.google-btn img.google-icon {
+    width: 30px; /* Increased logo size */
+    height: 30px; /* Increased logo size */
+}
+
+.google-btn:hover,
+.google-btn:focus {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.google-btn:active {
+    transform: scale(0.97);
+}
+
+.google-btn:focus {
+    outline: 2px solid #28a745;
+    outline-offset: 2px;
+}
+
+/* Link styling */
+p {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+p a {
+    color: #28a745;
+    text-decoration: none; /* Removed underline */
+}
+
+p a:hover {
+    text-decoration: none; /* Ensuring no underline on hover */
+}
+
+/* OR Divider Styling */
+.or-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0; /* Adjust vertical spacing */
+    font-family: 'Roboto', sans-serif;
+    position: relative; /* Allows for fine positioning */
+    top: -16px; /* Move the entire OR divider upwards */
+}
+
+.or-divider span {
+    flex: 1; /* Grow to take available space */
+    height: 2px; /* Thin line */
+    background-color: #ddd; /* Light gray line */
+    margin: 0 10px; /* Space around the OR text */
+}
+
+.or-divider p {
+    margin: 0;
+    font-size: 14px;
+    color: #555; /* Neutral color for the text */
+}
+
+a {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.xyz {
+    text-decoration: none;
+    font-size: xx-large;
+}
