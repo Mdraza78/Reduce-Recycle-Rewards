@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-
+const passport = require('passport'); // For Google OAuth
 // 🔹 Register a new user
 router.post('/register', async (req, res) => {
   try {
@@ -59,5 +59,33 @@ router.post('/login', async (req, res) => {
     res.status(500).json({ message: '❌ Something went wrong', error: error.message });
   }
 });
+
+router.get('/current-user', (req, res) => {
+    if (req.session.user) {
+      res.status(200).json(req.session.user);
+    } else {
+      res.status(401).json({ message: 'No user logged in' });
+    }
+  });
+
+router.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+
+
+// Google OAuth Callback Route
+router.get('/auth/google/callback',
+    passport.authenticate('google', {
+      failureRedirect: 'http://localhost:5173/login',
+    }),
+    (req, res) => {
+      // Store user data in the session
+      req.session.user = {
+        email: req.user.email,
+        name: req.user.name,
+      };
+  
+      // Redirect to the dashboard without query parameters
+      res.redirect('http://localhost:5173/dashboard');
+    }
+  );
 
 module.exports = router;
