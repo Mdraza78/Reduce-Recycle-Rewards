@@ -1,4 +1,5 @@
 require('dotenv').config();
+console.log('MONGO_URI:', process.env.MONGO_URI);
 const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
@@ -9,13 +10,21 @@ const userRoutes = require('./routes/userRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Debug log to check if .env is loaded correctly
+console.log('MONGO_URI:', process.env.MONGO_URI);
+
+// Ensure MONGO_URI is loaded correctly
+if (!process.env.MONGO_URI) {
+  console.error("❌ MONGO_URI is missing in .env file");
+  process.exit(1); // Exit if MONGO_URI is undefined
+}
+
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // Replace with your frontend URL
-  credentials: true,
-}));
+    origin: 'http://localhost:5173', // Replace with your frontend URL
+    credentials: true,
+  }));
 app.use(express.json());
-
 
 // Session setup
 app.use(session({
@@ -24,19 +33,20 @@ app.use(session({
     saveUninitialized: false,
     cookie: {
       maxAge: 3600000, // 1 hour
-      sameSite: 'lax', // Helps with cross-origin requests
-      httpOnly: true,  // Prevents JavaScript from accessing the cookie
-    }, // Use `secure: true` only in production
+      sameSite: 'lax',
+      httpOnly: true,
+    },
   }));
 
-  // Initialize Passport.js
+// Initialize Passport.js
 app.use(passport.initialize());
 app.use(passport.session());
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('✅ Connected to MongoDB'))
-  .catch(err => console.error('❌ Failed to connect to MongoDB', err));
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch((err) => console.error('MongoDB connection error:', err));
 
 // Routes
 app.use('/api/users', userRoutes);

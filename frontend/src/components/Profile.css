@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .profile-container {
+    display: flex;
+    border-bottom: 1px solid grey;
+    width: 80%;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    border: 1px solid #ddd;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    padding: 30px;
+    width: 280px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;  /* ✅ Changed to column to place the avatar above the name */
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Adjusted spacing */
+    border-right: 1px solid #ddd;
+  }
+  .profile-content hr {
+    border: none;
+    height: 1px;
+    border: #ddd; /* Grey line */
+    width: 100%; /* Full width */
+    margin-top: 5px;
+    margin-bottom: 20px;
+  }
+  
+  /* Avatar */
+  .avatar {
+    background: #019253;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  /* Sidebar Name */
+  .sidebar h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Profile Content */
+  .profile-content {
+    padding: 30px;
+    flex-grow: 1;
+    border-left: 1px solid #ddd;
+    text-align: center; /* ✅ Centering Edit Profile button */
+  }
+  
+  .profile-content h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+  
+  
+  
+  }
+  
+  .profile-content p {
+    text-align: left;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  /* Input field styling */
+  .profile-input {
+    width: 100%;
+    max-width: 270px;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #019253; /* ✅ Apply border color */
+    border-radius: 6px;
+    background-color: transparent; /* ✅ Ensure full transparency */
+    color: black; /* ✅ Text should remain visible */
+    transition: all 0.3s ease;
+    outline: none; /* ✅ Remove any extra focus outline */
+  }
+  
+  .profile-input:focus {
+    border-color: #019253; /* ✅ Keep the same green border */
+    box-shadow: none; /* ✅ Remove any focus glow */
+  }
+  
+  /* Disabled Input */
+  .profile-input:disabled {
+    background-color: transparent !important; /* ✅ Ensure it remains transparent */
+    color: black; 
+    border: 1px solid #ddd; /* ✅ Keep a light border */
+    cursor: not-allowed;
+    opacity: 1; /* ✅ Prevents greyed-out appearance */
+  }
+  
+  /* Buttons */
+  .edit-btn, .save-btn {
+    background-color: #019253;
+    color: white;
+    width: 300px;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .edit-btn:hover, .save-btn:hover {
+    background-color: #047e49;
+  }
+  

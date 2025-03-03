@@ -4,17 +4,25 @@ const bcrypt = require('bcrypt');
 const userSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
-  password: { type: String, select: false }, // Make password optional for OAuth users
-  mobile: { type: String, match: /^[0-9]{10}$/ }, // Make mobile optional
-  isOAuthUser: { type: Boolean, default: false }, // Add a flag for OAuth users
+  password: { type: String, required: true },
+  mobile: { 
+    type: String, 
+    required: true, 
+    unique: true,
+    validate: {
+      validator: function(v) {
+        return /^[0-9]{10}$/.test(v);
+      },
+      message: props => `${props.value} is not a valid mobile number!`
+    }
+  }
 });
 
-// 🔹 Hash password before saving (only if password is provided)
+// Hash the password before saving
 userSchema.pre('save', async function (next) {
-  if (this.isModified('password') && this.password) {
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
-  }
+  if (!this.isModified('password')) return next();
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
   next();
 });
 

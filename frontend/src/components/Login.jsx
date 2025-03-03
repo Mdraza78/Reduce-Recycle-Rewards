@@ -33,8 +33,11 @@ const Login = () => {
     setIsLoading(true);
   
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', formData);
-      setMessage(response.data.message);
+      const response = await axios.post('http://localhost:5000/api/users/login', formData, {
+        withCredentials: true,
+      });
+  
+      setMessage('Login successful! Redirecting to dashboard...');
   
       // Store user info in sessionStorage
       sessionStorage.setItem('user', JSON.stringify({
@@ -44,8 +47,11 @@ const Login = () => {
       }));
   
       // Redirect to the dashboard
-      navigate('/dashboard');
+      setTimeout(() => {
+        navigate('/dashboard');
+      }, 2000); // Redirect after 2 seconds
     } catch (error) {
+      console.error('Login error:', error);
       if (error.response) {
         if (error.response.status === 401) {
           setMessage('Invalid email or password');
