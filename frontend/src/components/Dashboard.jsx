@@ -9,7 +9,7 @@ const Dashboard = () => {
       <div className="dashboard-container">
         <h1>Dashboard</h1>
         <div className="dashboard-content">
-            <h1>Dashboard</h1>
+            <h1>Dashboard!</h1>
           <p>Welcome to the 3R - Generative Garbage Segregation App Dashboard.</p>
         </div>
       </div>
