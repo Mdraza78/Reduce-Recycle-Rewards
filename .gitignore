@@ -1,2 +1,22 @@
+# Ignore .env files
 backend/.env
 .env
+
+# Ignore node_modules folders
+backend/node_modules/
+frontend/node_modules/
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore build folders
+backend/build/
+frontend/build/
