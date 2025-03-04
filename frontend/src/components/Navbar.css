@@ -1,0 +1,84 @@
+/* Navbar container */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #019253; /* Professional green color */
+    height: 70px; /* Adjusted height for better balance */
+    padding: 0 30px; /* Increased padding for better spacing */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 96%; /* Ensure navbar spans full width */
+    position: fixed; /* Fix navbar at the top */
+    top: 0; /* Position at the top */
+    left: 0; /* Align to the left */
+    z-index: 1000; /* Ensure navbar is above other content */
+  }
+  
+  /* Logo styles */
+  .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Circular logo for a modern look */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Hover effect for logo */
+  .logo img:hover {
+    transform: scale(1.1); /* Slightly enlarge logo on hover */
+  }
+  
+  /* App name styles */
+  .app-name {
+    font-size: 20px; /* Reduced font size for better balance */
+    font-family: 'Poppins', sans-serif; /* Modern and professional font */
+    font-weight: 500; /* Reduced from 600 to 500 for lighter boldness */
+    color: #ffffff; /* Pure white for contrast */
+    text-align: center;
+    flex-grow: 1; /* Ensures it stays centered */
+    letter-spacing: 1px; /* Slight letter spacing for elegance */
+    text-transform: uppercase; /* Uppercase for a professional look */
+    margin: 0 20px 0 50px; /* Added margin-left: 40px to move text to the right */
+    line-height: 1.2; /* Adjusted line height to reduce height */
+}
+  
+  /* Welcome message styles */
+  .welcome-message {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif; /* Consistent font family */
+    font-weight: 500; /* Medium weight for balance */
+    color: #ffffff; /* Pure white for contrast */
+    margin-left: 10px;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent text from wrapping */
+    overflow: hidden; /* Allow text to overflow */
+    text-overflow: clip; /* Do not add ellipsis */
+    flex-shrink: 0; /* Prevent shrinking */
+    letter-spacing: 0.5px; /* Slight letter spacing for readability */
+    padding: 8px 16px; /* Add padding for a button-like feel */
+    border-radius: 4px; /* Rounded corners for a polished look */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background for emphasis */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+  }
+  
+ 
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      height: auto;
+      padding: 15px; /* Adjusted padding for smaller screens */
+    }
+  
+    .app-name {
+      margin-top: 10px;
+      font-size: 18px; /* Adjusted font size for smaller screens */
+      line-height: 1.2; /* Consistent line height */
+    }
+  
+    .welcome-message {
+      margin-top: 10px;
+      font-size: 14px; /* Adjusted font size for smaller screens */
+      padding: 6px 12px; /* Adjusted padding for smaller screens */
+    }
+  }

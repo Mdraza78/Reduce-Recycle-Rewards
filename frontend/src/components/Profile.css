@@ -99,7 +99,7 @@ body {
   }
   
   .profile-input:focus {
-    border-color: #019253; /* ✅ Keep the same green border */
+    border-color: #019253; 
     box-shadow: none; /* ✅ Remove any focus glow */
   }
   
