@@ -1,18 +1,14 @@
 import React from "react";
-import "./Dashboard.css"; // Import Dashboard CSS
-import Navbar from "./Navbar"; // Import Navbar component
+import "./Dashboard.css"; // Import the CSS for the dashboard
+import Navbar from "./Navbar"; // Import the Navbar
+import Calendar from "./Calendar"; // Import the new Calendar component
 
 const Dashboard = () => {
   return (
-    <div className="dashboard-wrapper">
+    < div className="dashboard-wrapper">
       <Navbar /> {/* Navbar at the top */}
-      <div className="dashboard-container">
-        <h1>Dashboard</h1>
-        <div className="dashboard-content">
-            <h1>Dashboard!</h1>
-          <p>Welcome to the 3R - Generative Garbage Segregation App Dashboard.</p>
-        </div>
-      </div>
+        <Calendar /> {/* Use the Calendar component */}
+      
     </div>
   );
 };

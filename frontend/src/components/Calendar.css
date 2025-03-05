@@ -1,0 +1,90 @@
+.calendar {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto; /* Add margin at the top */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align the title */
+}
+
+/* Separate title for better alignment */
+.calendar-header {
+    margin-bottom: 20px;
+}
+
+.calendar-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Adds spacing between buttons and title */
+    margin-bottom: 20px;
+}
+
+.month-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 0;
+}
+  
+.nav-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-button:hover {
+    color: #3498db; /* Blue hover effect */
+  }
+  
+  /* Calendar grid styling */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+  }
+  
+  /* Weekday headers */
+  .calendar-day-header {
+    text-align: center;
+    font-weight: bold;
+    color: #34495e; /* Darker text */
+    padding: 10px;
+    background-color: #dfe6e9; /* Light gray background */
+    border-radius: 8px;
+  }
+  
+  /* Calendar days */
+  .calendar-day {
+    text-align: center;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .calendar-day:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Empty days (for alignment) */
+  .calendar-day.empty {
+    background-color: transparent;
+    box-shadow: none;
+    cursor: default;
+  }
+  
+  /* Today's date */
+  .calendar-day.today {
+    background-color: #3498db; /* Blue background */
+    color: white;
+    font-weight: bold;
+  }
