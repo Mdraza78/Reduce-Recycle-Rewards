@@ -22,9 +22,6 @@ const Calendar = () => {
     setCurrentDate(new Date(displayedYear, currentDate.getMonth() + 1, 1));
   };
 
-  const handleCurrentDateClick = () => {
-    alert(`You clicked on the current date: ${currentDay}/${currentMonth + 1}/${currentYear}`);
-  };
 
   const renderDaysOfWeek = () => {
     return daysOfWeek.map((day, index) => (
