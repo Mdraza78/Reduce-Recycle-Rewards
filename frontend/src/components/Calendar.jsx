@@ -22,6 +22,10 @@ const Calendar = () => {
     setCurrentDate(new Date(displayedYear, currentDate.getMonth() + 1, 1));
   };
 
+  const handleCurrentDateClick = () => {
+    alert(`You clicked on the current date: ${currentDay}/${currentMonth + 1}/${currentYear}`);
+  };
+
   const renderDaysOfWeek = () => {
     return daysOfWeek.map((day, index) => (
       <div key={index} className="day-of-week">
@@ -44,7 +48,11 @@ const Calendar = () => {
         currentDate.getFullYear() === currentYear;
 
       days.push(
-        <div key={i} className={`day ${isCurrentDay ? 'current-day' : ''}`}>
+        <div
+          key={i}
+          className={`day ${isCurrentDay ? 'current-day' : 'non-clickable'}`}
+          onClick={isCurrentDay ? handleCurrentDateClick : undefined} // Only add onClick for current date
+        >
           {i}
         </div>
       );

@@ -66,7 +66,7 @@
   
   .day {
     background-color: #e9ecef;
-    cursor: pointer;
+    /* Remove hover effect from here */
   }
   
   .day.empty {
@@ -74,12 +74,19 @@
     cursor: default;
   }
   
-  .day:hover {
-    background-color: #d0d4d8;
+  /* Remove hover effect for non-current dates */
+  .day:not(.current-day):hover {
+    background-color: #e9ecef; /* Keep the same color on hover */
   }
   
   .current-day {
     background-color: #019253; /* Highlight current date with #019253 */
     color: white;
     font-weight: bold;
+    cursor: pointer; /* Add cursor: pointer only for the current date */
+  }
+  
+  /* Add hover effect only for the current date */
+  .current-day:hover {
+    background-color: #017143; /* Darker shade for hover effect */
   }
