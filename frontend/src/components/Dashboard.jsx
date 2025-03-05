@@ -5,10 +5,11 @@ import Calendar from "./Calendar"; // Import the new Calendar component
 
 const Dashboard = () => {
   return (
-    < div className="dashboard-wrapper">
+    <div className="dashboard-wrapper">
       <Navbar /> {/* Navbar at the top */}
+      <div className="dashboard-content">
         <Calendar /> {/* Use the Calendar component */}
-      
+      </div>
     </div>
   );
 };
