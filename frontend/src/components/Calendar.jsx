@@ -22,7 +22,6 @@ const Calendar = () => {
     setCurrentDate(new Date(displayedYear, currentDate.getMonth() + 1, 1));
   };
 
-
   const renderDaysOfWeek = () => {
     return daysOfWeek.map((day, index) => (
       <div key={index} className="day-of-week">
@@ -48,7 +47,9 @@ const Calendar = () => {
         <div
           key={i}
           className={`day ${isCurrentDay ? 'current-day' : 'non-clickable'}`}
-          onClick={isCurrentDay ? handleCurrentDateClick : undefined} // Only add onClick for current date
+          onClick={isCurrentDay ? () => {
+            // Add any custom logic here if needed
+          } : undefined} // Only add onClick for current date
         >
           {i}
         </div>
