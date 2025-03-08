@@ -1,0 +1,81 @@
+.location-container {
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height */
+}
+
+.location-info {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.location-info p {
+    margin: 5px 0;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.recycling-units-container {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+.recycling-units-container h2 {
+    margin-bottom: 10px;
+}
+
+.recycling-units-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.recycling-units-container li {
+    padding: 5px 0;
+    font-size: 16px;
+}
+
+.recycling-units-container li strong {
+    color: green;
+}
+
+.MapContainer {
+    height: 400px;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .location-container {
+        padding: 10px;
+    }
+    .location-info {
+        font-size: 16px;
+    }
+    h1 {
+        font-size: 20px;
+    }
+}
+
+.flicker {
+    animation: flickerAnimation 1s infinite;
+}
+
+@keyframes flickerAnimation {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4; /* Adjust as needed */
+    }
+}
+
+.custom-icon {
+    background: transparent;
+    border: none;
+}

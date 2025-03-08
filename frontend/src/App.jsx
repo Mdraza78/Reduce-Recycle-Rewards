@@ -5,7 +5,10 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 import GarbageDetection from './components/GarbageDetection'
+import LocationMap from './components/LocationMap';
 //import Navbar from './components/Navbar'; // Import the Navbar component
+import 'leaflet/dist/leaflet.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 export default function App() {
   return (
@@ -18,6 +21,7 @@ export default function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/garbage-detection" element={<GarbageDetection />} />
+        <Route path="/map" element={<LocationMap/>}/>
       </Routes>
     </Router>
   );
