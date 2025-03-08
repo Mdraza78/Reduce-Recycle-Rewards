@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="logo">
-        <img src="./images/logo2.jpg" alt="Logo" />
+        <span className="logo-text">3R</span>
       </div>
       <div className="app-name">3R - Generative Garbage Segregation App</div>
       <div className="welcome-message" onClick={handleProfileClick}>

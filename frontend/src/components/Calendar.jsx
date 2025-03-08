@@ -43,10 +43,16 @@ const Calendar = () => {
         currentDate.getMonth() === currentMonth &&
         currentDate.getFullYear() === currentYear;
 
+      // Check if the day is in the past
+      const isPastDay =
+        currentDate.getFullYear() < currentYear ||
+        (currentDate.getFullYear() === currentYear && currentDate.getMonth() < currentMonth) ||
+        (currentDate.getFullYear() === currentYear && currentDate.getMonth() === currentMonth && i < currentDay);
+
       days.push(
         <div
           key={i}
-          className={`day ${isCurrentDay ? 'current-day' : 'non-clickable'}`}
+          className={`day ${isCurrentDay ? 'current-day' : ''} ${isPastDay ? 'past-day' : ''}`}
           onClick={isCurrentDay ? () => {
             // Add any custom logic here if needed
           } : undefined} // Only add onClick for current date

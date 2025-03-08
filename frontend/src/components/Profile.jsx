@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Profile.css";
-
+import Navbar from "./Navbar";
+import { div } from "@tensorflow/tfjs";
 export default function Profile() {
   const [userData, setUserData] = useState(null);
   const [error, setError] = useState("");
@@ -57,6 +58,12 @@ export default function Profile() {
   if (!userData) return <div className="loading">Loading...</div>;
 
   return (
+    <div>
+        <Navbar/>
+        <br />
+        <br />
+        <br />
+        <br />
     <div className="profile-container">
       <div className="sidebar">
         <div className="avatar">{userData.name.charAt(0)}</div>
@@ -109,6 +116,7 @@ export default function Profile() {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 }
