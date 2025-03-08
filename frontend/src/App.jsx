@@ -4,6 +4,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
+import GarbageDetection from './components/GarbageDetection'
 //import Navbar from './components/Navbar'; // Import the Navbar component
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/garbage-detection" element={<GarbageDetection />} />
       </Routes>
     </Router>
   );
