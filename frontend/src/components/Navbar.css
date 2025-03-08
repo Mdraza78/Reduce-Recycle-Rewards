@@ -1,13 +1,14 @@
 /* Navbar container */
+/* Navbar container */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #019253; /* Professional green color */
+  background-color: #019253!important; /* Professional green color */
   height: 70px; /* Adjusted height for better balance */
   padding: 0 30px; /* Increased padding for better spacing */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  width: 96%; /* Ensure navbar spans full width */
+  width: 97%!important; /* Ensure navbar spans full width */
   position: fixed; /* Fix navbar at the top */
   top: 0; /* Position at the top */
   left: 0; /* Align to the left */

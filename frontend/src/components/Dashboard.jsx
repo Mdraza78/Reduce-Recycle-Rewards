@@ -9,6 +9,10 @@ const Dashboard = () => {
       <Navbar /> {/* Navbar at the top */}
       <div className="dashboard-content">
         <Calendar /> {/* Use the Calendar component */}
+        <div className="dashboard-buttons">
+          <button className="dashboard-button make-money">Make Money</button>
+          <button className="dashboard-button provide-feedback">Provide Feedback</button>
+        </div>
       </div>
     </div>
   );

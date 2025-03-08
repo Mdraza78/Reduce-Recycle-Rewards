@@ -1,16 +1,95 @@
+/* Full-screen dashboard wrapper */
+.dashboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f0f4f8; /* Light background */
+}
+
+/* Navbar styling (assuming Navbar has its own CSS) */
+.navbar {
+  width: 100%;
+  height: 60px; /* Adjust height as needed */
+  background-color: #2c3e50; /* Dark background for Navbar */
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard container (below Navbar) */
+.dashboard-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Allow scrolling */
+  margin-top: 40px; /* Increased margin for gap */
+}
+
+/* Container for buttons */
+.dashboard-buttons {
+  display: flex;
+  gap: 20px; /* Space between buttons */
+  margin-top: 30px; /* Space above buttons */
+}
+
+/* Button styling */
+.dashboard-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Make Money button */
+.dashboard-button.make-money {
+  background-color: #019253; /* Green color */
+  color: white;
+}
+
+/* Provide Feedback button */
+.dashboard-button.provide-feedback {
+  background-color: #495057; /* Updated color */
+  color: black; /* Updated text color */
+}
+
+/* Hover effects */
+.dashboard-button.make-money:hover {
+  background-color: #017143; /* Darker green */
+  transform: translateY(-2px); /* Slight lift */
+}
+
+.dashboard-button.provide-feedback:hover {
+  background-color: #3a4046; /* Darker shade for hover */
+  transform: translateY(-2px); /* Slight lift */
+}
+
+/* Active effects */
+.dashboard-button:active {
+  transform: translateY(0); /* Reset lift */
+}
+
+/* Calendar styles (if needed) */
 .calendar {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   max-width: 1200px;
-  margin: 40px auto; /* Increased margin for gap */
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   box-sizing: border-box;
-  height: 500px; /* Increase the height */
 }
 
 .calendar-header {
@@ -66,7 +145,6 @@
 
 .day {
   background-color: #e9ecef;
-  /* Remove hover effect from here */
 }
 
 .day.empty {
@@ -80,11 +158,7 @@
   color: #495057; /* Darker text for better contrast */
 }
 
-/* Remove hover effect for non-current dates */
-.day:not(.current-day):hover {
-  background-color: #e9ecef; /* Keep the same color on hover */
-}
-
+/* Current day styling */
 .current-day {
   background-color: #019253; /* Highlight current date with #019253 */
   color: white;
@@ -92,7 +166,35 @@
   cursor: pointer; /* Add cursor: pointer only for the current date */
 }
 
-/* Add hover effect only for the current date */
+/* Hover effect for current day */
 .current-day:hover {
   background-color: #017143; /* Darker shade for hover effect */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .dashboard-buttons {
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    gap: 10px; /* Reduce gap between buttons */
+  }
+
+  .dashboard-button {
+    width: 100%; /* Full-width buttons on smaller screens */
+  }
+
+  .calendar {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  .calendar-header {
+    height: 50px; /* Reduce height for smaller screens */
+  }
+
+  .month-year {
+    font-size: 1.2em; /* Reduce font size for smaller screens */
+  }
+
+  .days-of-week, .days-grid {
+    gap: 10px; /* Reduce gap between days and dates */
+  }
 }
