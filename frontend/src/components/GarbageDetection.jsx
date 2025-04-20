@@ -136,7 +136,6 @@ const GarbageDetection = () => {
               <option value="other">Other</option>
             </select>
           </div>
-
           <div className="weight-input-container">
             <label htmlFor="weight">Enter Weight (in grams):</label>
             <input
@@ -155,7 +154,6 @@ const GarbageDetection = () => {
           </div>
         </>
       )}
-
       <div className="predictions-container">
         <h2>Results:</h2>
         <p className="prediction-item"><strong>Description:</strong> {description}</p>
