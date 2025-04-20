@@ -13,7 +13,7 @@ router.post('/feedback', async (req, res) => {
   try {
     const { workerId, name, email, phone, problem, comments } = req.body;
     
-    // Basic validation
+    // Validation
     if (!workerId || !name || !phone || !problem) {
       return res.status(400).json({ 
         success: false,
