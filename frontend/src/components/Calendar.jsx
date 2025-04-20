@@ -4,7 +4,7 @@ import './Calendar.css'; // Import the CSS for the calendar
 
 const Calendar = () => {
   //Calender
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate(); // Initialize navigation
   const [currentDate, setCurrentDate] = useState(new Date()); // Current date state
   const today = new Date(); // Today's date
   const currentDay = today.getDate(); // Current day (e.g., 6 for March 6, 2023)
