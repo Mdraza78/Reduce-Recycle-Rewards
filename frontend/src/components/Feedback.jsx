@@ -172,7 +172,7 @@ export default function Feedback() {
           {isSubmitting ? (
             <>
               <span className="spinner"></span>
-              Submitting...
+              Submitting.....
             </>
           ) : (
             'Submit Feedback'
