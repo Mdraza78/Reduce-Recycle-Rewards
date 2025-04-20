@@ -110,11 +110,11 @@ const GarbageDetection = () => {
   };
 
   return (
+    //body of page
     <div className="container">
       <h1>Garbage Detection</h1>
       <p>Upload Garbage Image:</p>
       <input type="file" accept="image/*" onChange={handleImageUpload} className="file-input" />
-
       {image && (
         <>
           <div className="image-container">
@@ -149,7 +149,7 @@ const GarbageDetection = () => {
               min="0"
             />
           </div>
-
+        
           <div className="coins-earned">
             <strong>Coins Earned:</strong> {coinsEarned}
           </div>
@@ -166,7 +166,7 @@ const GarbageDetection = () => {
           <strong>Category:</strong> {category}
         </p>
       </div>
-      
+
 
       <div className="button-container">
         <button className="action-button back-button">Back to Calendar</button>
