@@ -4,7 +4,67 @@ const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const passport = require('passport');
+// Add this near your other model imports at the top of userRoutes.js
+const Feedback = require('../models/Feedback');
 
+// Add this new route with your other routes in userRoutes.js
+// 🔹 Submit Worker Feedback
+router.post('/feedback', async (req, res) => {
+  try {
+    const { workerId, name, email, phone, problem, comments } = req.body;
+    
+    // Basic validation
+    if (!workerId || !name || !phone || !problem) {
+      return res.status(400).json({ 
+        success: false,
+        message: 'Missing required fields (workerId, name, phone, problem)' 
+      });
+    }
+
+    const newFeedback = new Feedback({
+      workerId,
+      name,
+      email: email || null, // Make email optional
+      phone,
+      problem,
+      comments: comments || null // Make comments optional
+    });
+
+    await newFeedback.save();
+    
+    res.status(201).json({ 
+      success: true,
+      message: '✅ Feedback submitted successfully',
+      data: newFeedback
+    });
+  } catch (error) {
+    console.error('❌ Error submitting feedback:', error);
+    res.status(500).json({ 
+      success: false,
+      message: 'Failed to submit feedback',
+      error: error.message 
+    });
+  }
+});
+
+// 🔹 Get All Feedback (protected route example)
+router.get('/feedback', passport.authenticate('jwt', { session: false }), async (req, res) => {
+  try {
+    const feedbacks = await Feedback.find().sort({ createdAt: -1 });
+    res.status(200).json({ 
+      success: true,
+      count: feedbacks.length,
+      data: feedbacks 
+    });
+  } catch (error) {
+    console.error('❌ Error fetching feedback:', error);
+    res.status(500).json({ 
+      success: false,
+      message: 'Failed to fetch feedback',
+      error: error.message 
+    });
+  }
+});
 // 🔹 Register a new user
 router.post('/register', async (req, res) => {
     try {

@@ -1,0 +1,188 @@
+/* Main Container */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  /* Content Styling */
+  .content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  /* Main Title */
+  .main-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #019253; /* Changed to requested color */
+    font-weight: 600;
+  }
+  
+  /* Date Container */
+  .date-container {
+    margin-bottom: 30px;
+  }
+  
+  .date-text {
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  .current-date {
+    font-weight: bold;
+    color: #2C3E50;
+  }
+  
+  /* Upload Container */
+  .upload-container {
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  
+  .upload-label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .upload-input {
+    padding: 10px;
+    width: 100%;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+  }
+  
+  .upload-input:focus {
+    border-color: #019253; /* Focus border color */
+    outline: none;
+  }
+  
+  /* Image Preview */
+  .image-preview img {
+    max-width: 100%;
+    max-height: 250px;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  /* Back Button */
+  .back-button {
+    background-color: #019253;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px; /* Space between buttons */
+  }
+  
+  .back-button:hover {
+    background-color: #016f3b;
+  }
+  
+  .back-button:focus {
+    outline: none;
+  }
+  
+  /* Button Container for Money Make and Provide Feedback */
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between the buttons */
+    margin-top: 20px; /* Add space before the buttons */
+  }
+  
+  /* Money Make Button */
+  .money-make-button {
+    background-color: #019253;
+    color: white;
+    padding: 12px 30px;
+    
+    font-weight: 300;
+    text-transform: uppercase; /* Make text uppercase */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    height: 50px;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Fixed width for consistent button size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .money-make-button:hover {
+    background-color: #016f3b;
+  }
+  
+  .money-make-button:focus {
+    outline: none;
+  }
+  
+  /* Provide Feedback Button */
+  .feedback-button {
+    background-color: #019253;
+    color: white;
+    padding: 12px 30px;
+    font-weight: 300;
+    text-transform: uppercase; /* Make text uppercase */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Fixed width for consistent button size */
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .feedback-button:hover {
+    background-color: #016f3b;
+  }
+  
+  .feedback-button:focus {
+    outline: none;
+  }
+  
+  /* Find Municipality Button */
+  .find-municipality-button {
+    background-color: #019253;
+    color: white;
+    padding: 12px 30px;
+    font-weight: 300;
+    text-transform: uppercase; /* Make text uppercase */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+    margin-top: 20px; /* Space above the button */
+  }
+  
+  .find-municipality-button:hover {
+    background-color: #016f3b;
+  }
+  
+  .find-municipality-button:focus {
+    outline: none;
+  }
+  

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Calendar.css'; // Import the CSS for the calendar
 
 const Calendar = () => {
+  const navigate = useNavigate(); // Initialize navigate
   const [currentDate, setCurrentDate] = useState(new Date()); // Current date state
   const today = new Date(); // Today's date
   const currentDay = today.getDate(); // Current day (e.g., 6 for March 6, 2023)
@@ -54,7 +56,8 @@ const Calendar = () => {
           key={i}
           className={`day ${isCurrentDay ? 'current-day' : ''} ${isPastDay ? 'past-day' : ''}`}
           onClick={isCurrentDay ? () => {
-            // Add any custom logic here if needed
+            // Redirect to the MainPage when the current date is clicked
+            navigate('/garbage-detection');
           } : undefined} // Only add onClick for current date
         >
           {i}

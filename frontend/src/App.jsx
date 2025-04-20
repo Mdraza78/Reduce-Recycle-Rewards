@@ -6,6 +6,8 @@ import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 import GarbageDetection from './components/GarbageDetection'
 import LocationMap from './components/LocationMap';
+import MainPage from './components/MainPage';
+import Feedback from './components/Feedback';
 //import Navbar from './components/Navbar'; // Import the Navbar component
 import 'leaflet/dist/leaflet.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -22,6 +24,8 @@ export default function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/garbage-detection" element={<GarbageDetection />} />
         <Route path="/map" element={<LocationMap/>}/>
+        <Route path="/main" element={<MainPage/>}/>     
+        <Route path="/feedback" element={<Feedback/>}/>     
       </Routes>
     </Router>
   );
